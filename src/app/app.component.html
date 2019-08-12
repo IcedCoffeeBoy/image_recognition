@@ -1,26 +1,34 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12" *ngIf="!loading, else loadingTemplate">
+    <div class="col-xs-12" *ngIf="!loading; else loadingTemplate">
       <input #fileInput type="file" accept="image/*" (change)="processFile(fileInput.files)">
     </div>
 
     <ng-template #loadingTemplate>
-      <p>loading ... </p>
+      <mat-spinner></mat-spinner>
     </ng-template>
   </div>
 
-  <div class="img-container" *ngIf="imageInput" >
+  <div class="img-container" *ngIf="imageInput">
     <div class="row">
       <img #imgOutput [src]="imageInput" style="height: 300px" alt="user input image">
     </div>
 
     <div class="row">
-      <button class=" btn btn-primary" type="button" (click)="onPredict()" >Predict</button>
+      <button class=" btn btn-primary" type="button" (click)="onPredict()">Predict</button>
     </div>
 
-    <div class="row" *ngFor="let prediction of predictions" >
+    <div class="row" *ngIf="predicting" #loading>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+
+    <div class="row" *ngFor="let prediction of predictions">
       <p>{{prediction.className}} is {{prediction.probability}}% </p>
     </div>
+
+
   </div>
 
 </div>

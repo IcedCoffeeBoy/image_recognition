@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import * as tf from '@tensorflow/tfjs';
 import { ReplaySubject } from 'rxjs';
 
-import { IMAGENET_CLASSES } from '../assets/imagenet-classes';
+import { IMAGENET_CLASSES } from './imagenet-classes';
 
 
 @Injectable({
@@ -16,7 +16,7 @@ export class ImageClassifierService {
   }
 
   async initClassifier() {
-    const modelUrl = '../assets/model.json';
+    const modelUrl = '/image_recognition/assets/model.json';
     // const handler = tfn.io.fileSystem('../assets/model.json');
     this.model = await tf.loadGraphModel(modelUrl);
     this.ready.next(true);
