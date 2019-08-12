@@ -17,6 +17,10 @@
     <div class="row">
       <button class=" btn btn-primary" type="button" (click)="onPredict()" >Predict</button>
     </div>
+
+    <div class="row" *ngFor="let prediction of predictions" >
+      <p>{{prediction.className}} is {{prediction.probability}}% </p>
+    </div>
   </div>
 
 </div>

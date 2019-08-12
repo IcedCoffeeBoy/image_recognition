@@ -1,6 +1,7 @@
-import { Injectable, ComponentFactoryResolver } from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as tf from '@tensorflow/tfjs';
 import { ReplaySubject } from 'rxjs';
+
 import { IMAGENET_CLASSES } from '../assets/imagenet-classes';
 
 

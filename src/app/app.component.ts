@@ -1,5 +1,6 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 import { ImageClassifierService } from './image-classifier.service';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit {
   loading = true;
   title = 'image-recognition';
   imageInput;
+  predictions;
 
   constructor(
     private classifierService: ImageClassifierService
@@ -33,8 +35,8 @@ export class AppComponent implements OnInit {
 
   async onPredict() {
     // this.image = await this.camera.capturePhoto();
-    const predictions = await this.classifierService.classify(this.imgRef.nativeElement);
-    console.log(predictions);
+    this.predictions = await this.classifierService.classify(this.imgRef.nativeElement);
+    console.log(this.predictions);
   }
 
 }
