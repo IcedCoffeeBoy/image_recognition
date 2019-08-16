@@ -915,7 +915,7 @@ Apache-2.0
 
 
 @tensorflow/tfjs-layers
-Apache-2.0 AND MIT
+Apache-2.0
 TensorFlow.js Layers is licensed under both the MIT and the Apache 2.0 licenses.
 
 ================================================================================
@@ -1395,6 +1395,9 @@ Apache-2.0
  limitations under the License.
  
 
+
+tfjs-yolov3
+ISC
 
 tslib
 Apache-2.0
