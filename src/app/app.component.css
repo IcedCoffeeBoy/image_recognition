@@ -1,0 +1,20 @@
+.img-box{
+  position: relative;
+  text-align: center;
+}
+
+.img-box .rect {
+  position: absolute;
+  border: 2px dashed #4183c4;
+  background: rgba(65, 131, 196, 0.4);
+}
+
+.className {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  left: 0;
+  text-align: center;
+  font-size: 5px;
+  width: 100%;
+}

@@ -1,0 +1,5 @@
+.rect {
+  position: absolute;
+  border: 2px dashed #4183c4;
+  background: rgba(65, 131, 196, 0.4)
+}
